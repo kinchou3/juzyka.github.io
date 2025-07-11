@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <title>JUZYKAA Skincare Products</title>
+    <link rel="stylesheet" href="..//shop/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <h1>JUZYKAA</h1>
+            <p>Natural Face Mask</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="cart-btn"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Discover Your Natural Glow</h2>
+            <p>Organic, cruelty-free skincare for all skin types</p>
+            <a href="#products" class="cta-btn">Shop Now</a>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <h2>Our Premium Collection</h2>
+        <div class="product-grid">
+            <!-- Products will be dynamically added here by JavaScript -->
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2>About JUZYKAA</h2>
+            <p>សូមអរគុណចំពោះការទិញផលិតផលពីខាងពួកយើង.</p>
+            <p>We believe that everyone deserves to feel confident in their skin, and our mission is to help you achieve your healthiest, most radiant complexion.</p>
+        </div>
+        <div class="about-image">
+            <img src="./រមៀត.jpg" alt="រមៀត">
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-slider">
+            <!-- Testimonials will be dynamically added here by JavaScript -->
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit" class="cta-btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#products">Shop</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Your Email" required>
+                    <button type="submit" class="cta-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <!-- <div class="copyright">
+            <p>&copy; 2023 GlowSkin. All rights reserved.</p>
+        </div> -->
+    </footer>
+    <!-- Checkout Modal -->
+<div id="checkout-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Complete Your Purchase</h2>
+        <div class="checkout-steps">
+            <div class="step active" data-step="1">1. Review Order</div>
+            <div class="step" data-step="2">2. Payment Method</div>
+            <div class="step" data-step="3">3. Complete</div>
+        </div>
+        
+        <!-- Step 1: Review Order -->
+        <div class="checkout-step" id="step-1">
+            <h3>Your Order</h3>
+            <div class="order-summary">
+                <!-- Cart items will be added here by JavaScript -->
+            </div>
+            <div class="order-total">
+                <p>Subtotal: <span id="subtotal">$0.00</span></p>
+                <p>Shipping: <span id="shipping">$5.00</span></p>
+                <p>Total: <span id="total">$0.00</span></p>
+            </div>
+            <button class="cta-btn next-step" data-next="2">Proceed to Payment</button>
+        </div>
+        
+        <!-- Step 2: Payment Method -->
+        <div class="checkout-step" id="step-2" style="display:none;">
+            <h3>Select Payment Method</h3>
+            <div class="payment-methods">
+                <div class="payment-method active" data-method="aba">
+                    <img src="./qr-kh.jpg" alt="qr-kh">
+                    <p>ABA PayWay</p>
+                </div>
+                <div class="payment-method" data-method="cash">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <p>Cash on Delivery</p>
+                </div>
+            </div>
+            
+            <!-- ABA Payment Form (hidden by default) -->
+            <div id="aba-form" class="payment-form">
+                <h4>ABA PayWay Details</h4>
+                <div class="form-group">
+                    <label for="aba-phone">Phone Number (with country code)</label>
+                    <input type="tel" id="aba-phone" placeholder="+855123456789" required>
+                </div>
+                <div class="form-group">
+                    <label for="aba-email">Email Address</label>
+                    <input type="email" id="aba-email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="aba-name">Full Name</label>
+                    <input type="text" id="aba-name" placeholder="Your Full Name" required>
+                </div>
+                <p class="notice">You will be redirected to ABA PayWay to complete your payment securely.</p>
+            </div>
+            
+            <!-- Cash on Delivery Form (hidden by default) -->
+            <div id="cash-form" class="payment-form" style="display:none;">
+                <h4>Cash on Delivery</h4>
+                <div class="form-group">
+                    <label for="cash-address">Delivery Address</label>
+                    <textarea id="cash-address" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="cash-phone">Phone Number</label>
+                    <input type="tel" id="cash-phone" placeholder="+855123456789" required>
+                </div>
+                <p class="notice">Payment will be collected when your order is delivered.</p>
+            </div>
+            
+            <button class="cta-btn next-step" data-next="3">Complete Order</button>
+            <button class="back-btn" data-back="1">Back</button>
+        </div>
+        
+        <!-- Step 3: Confirmation -->
+        <div class="checkout-step" id="step-3" style="display:none;">
+            <div id="aba-confirmation" style="display:none;">
+                <i class="fas fa-check-circle success-icon"></i>
+                <h3>Order Received!</h3>
+                <p>Thank you for your purchase. You will be redirected to ABA PayWay to complete your payment.</p>
+                <p>Order ID: <span id="aba-order-id"></span></p>
+                <button class="cta-btn" id="proceed-to-aba">Proceed to ABA PayWay</button>
+            </div>
+            
+            <div id="cash-confirmation" style="display:none;">
+                <i class="fas fa-check-circle success-icon"></i>
+                <h3>Order Received!</h3>
+                <p>Thank you for your purchase. We will contact you shortly to confirm your order.</p>
+                <p>Order ID: <span id="cash-order-id"></span></p>
+                <button class="cta-btn close-checkout">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="../shop/script.js"></script>
+</body>
+</html>
